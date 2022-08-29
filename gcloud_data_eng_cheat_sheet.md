@@ -1,3 +1,15 @@
+## Create a repo in Github
+
+* ### Set main:
+
+    ```
+    git branch -M main
+    ```
+* ### Add remote:
+
+    ```
+    git remote add origin git@github.com:notaarguello/devops_for_non_it_ones.git
+    ```
 ## Gcloud config:
 
 * ### Listing:
