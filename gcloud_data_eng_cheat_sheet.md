@@ -45,8 +45,7 @@
     ```
 
     Tip: Use direnv bash plug-in and put that command in a ```.envrc``` file inside your project folder.
-
-## SHH into google cloud shell
+* ## SHH into google cloud shell
 
     ```
     gcloud cloud-shell ssh
@@ -138,4 +137,21 @@ Tip: -m flag to parallelize.
 
     ```
     gsutil cp gs://packt-gcp-data-eng-notaarg-data-bucket/from-git/chapter-5/dataset/simple_file.csv ./
+    ```
+    and then loading that to the HDFS file system...
+
+    ```
+    hdfs dfs -copyFromLocal your_dir ../../hdfs_dir
+    ```
+
+* ### Submiting a job to your cluster:
+
+    ```
+    gcloud dataproc jobs submit pyspark --cluster "packt-dataproc-cluster" pyspark_job.py --region "us-central1" --project "packt-gcp-data-eng-notaarg"
+    ```
+
+    and to pass a jar:
+
+    ```
+    gcloud dataproc jobs submit pyspark --cluster=$DPRC_CLUSTER --region=us-central1 pyspark_jobs.py --jars gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar  
     ```
